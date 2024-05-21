@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryztar.</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #081b29;
+            color: white;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        /* INI UNTUK TULISAN DI KIRI ATAS*/
+
+        .logo {
+            position: relative;
+            font-size: 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: .4s;
+        }
+
+        /* INI UNTUK TULISAN DI KANAN ATAS*/
+
+        .navbar a {
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 30px;
+            transition: .3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active3 {
+            color: yellow;
+        }
+
+        /* INI UNTUK TULISAN DI TENGAH KIRI*/
+
+        .home {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+        }
+
+        .home-content {
+            max-width: 600px;
+        }
+
+        .home-content h1 {
+            position: relative;
+            font-size: 45px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .home-content h1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: .1s;
+        }
+
+        .home-content h2 {
+            position: relative;
+            font-size: 30px;
+            font-weight: 700;
+            color: yellow;
+
+        }
+
+        .home-content h2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: .1s;
+        }
+
+        .home-content p {
+            position: relative;
+            font-size: 16px;
+            margin: 20px 0 40px;
+        }
+
+        .home-content p::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: 1.4s;
+        }
+
+        .home-content .btn-box {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            width: 345px;
+            height: 50;
+        }
+
+        .home-content .btn-box::before {
+            content: '';
+            position: absolute;
+            top: 150px;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: .1s;
+            z-index: 2;
+        }
+
+        /* INI UNTUK TOMBOL KIRI BAWAH */
+
+        .btn-box a {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            top: 160px;
+            width: 100px;
+            height: 100%;
+            background: yellow;
+            border: 2px solid yellow;
+            border-radius: 8px;
+            font-size: 19px;
+            color: #081b29;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            z-index: 1;
+            overflow: hidden;
+            transition: .5s;
+        }
+
+        .btn-box a:hover {
+            color: yellow;
+        }
+
+        .btn-box a:nth-child(2) {
+            background: transparent;
+            color: yellow;
+        }
+
+        .btn-box a:nth-child(2):hover {
+            color: #081b29;
+        }
+
+        .btn-box a:nth-child(2)::before {
+            background: yellow;
+        }
+
+        .btn-box a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #081b29;
+            z-index: -1;
+            transition: .5s;
+        }
+
+        .btn-box a:hover::before {
+            width: 100%;
+        }
+
+        /* INI UNTUK TOMBOL KANAN BAWAH */
+
+        .btn-bok a {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            top: 130px;
+            margin-left: 1100px;
+            width: 100px;
+            height: 100%;
+            background: yellow;
+            border: 2px solid yellow;
+            border-radius: 8px;
+            font-size: 19px;
+            color: #081b29;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            z-index: 1;
+            overflow: hidden;
+            transition: .5s;
+        }
+
+        .btn-box a:hover {
+            color: yellow;
+        }
+
+        .btn-bok a:nth-child(2) {
+            background: transparent;
+            color: yellow;
+        }
+
+        .btn-bok a:nth-child(2):hover {
+            color: #081b29;
+        }
+
+        .btn-bok a:nth-child(2)::before {
+            background: yellow;
+        }
+
+        .btn-bok a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #081b29;
+            z-index: -1;
+            transition: .5s;
+        }
+
+        .btn-bok a:hover::before {
+            width: 100%;
+        }
+
+        /* INI UNTUK ANIMASI NAVBAR SEBELAH KANAN*/
+
+        ##.home-imgHover {
+            position: absolute;
+            top: 0;
+            right: 0px;
+            width: 615px;
+            height: 100%;
+            background: transparent;
+            border: 1px solid transparent;
+            transition: .3s;
+            animation: manipActiveHover .1s forwards;
+            animation-delay: 4s;
+            pointer-events: none;
+        }
+
+        ##.home-imgHover:hover {
+            background: #081b29;
+            opacity: .8;
+        }
+
+        ##.home-imgHover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120%;
+            height: 100%;
+            background: #081b29;
+            animation: showRight 1s ease forwards;
+            animation-delay: 1.9s;
+            z-index: 100;
+        }
+
+        /* COPYRIGHT */
+
+        .footer {
+            position: fixed;
+            bottom: 15px;
+        }
+
+        .footer p{
+            font-size: 15px;
+            font-weight: 100;
+            color: white;
+            opacity: 0.7;
+        }
+
+        .designer {
+            font-weight: 400;
+        }
+
+        /* GAMBAR */
+
+        .g1 {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            margin-top: -250px;
+            margin-left: 660px;
+            box-shadow: 5px 5px 10px yellowgreen;
+        }
+        
+        .g2 {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            margin-top: -250px;
+            margin-left: 960px;
+            box-shadow: 5px 5px 10px yellowgreen;
+        }
+        
+        .g3 {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            margin-top: 290px;
+            margin-left: 660px;
+            box-shadow: 5px 5px 10px yellowgreen;
+        }
+
+        .g4 {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            margin-top: 290px;
+            margin-left: 960px;
+            box-shadow: 5px 5px 10px yellowgreen;
+        }
+
+        /* KEYFRAME ANIMATION */
+        @keyframes showRight {
+            100% {
+                width: 0;
+            }
+        }
+
+        @keyframes manipActiveHover {
+            100% {
+                pointer-events: auto;
+            }
+        }
+    </style>
+
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">Ryztar.</a>
+
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html" class="active2">About</a>
+            <a href="hobbies.html" class="active3">Hobbies</a>
+            <a href="jobs.html" class="active4">Jobs</a>
+            <a href="contact.html" class="active5">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="home-content">
+            <h1>Rizky R. Tangdialla</h1>
+            <h2>Hobbies</h2>
+            <p>My hobbies are playing games, swimming, playing guitar and watching movies</p>
+        </div>
+
+        <img class="g1" src="assets/img/gitar.jpg">
+        <img class="g2" src="assets/img/netflix.png">
+        <img class="g3" src="assets/img/swim.png">
+        <img class="g4" src="assets/img/stick.png">
+
+        <soan class="home-imgHover"></soan>
+
+        <div class="footer">
+            <p>Copyright &copy;2024; Designed by <span class="designer">Ryztar.</span></p>
+        </div>
+    
+    </section>
+
+</body>
+
+</html>
